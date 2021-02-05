@@ -30,8 +30,8 @@ export default <T extends Constructor<Client>>(Base: T) =>
     public async execTranCvs(args: ExecTranCvsArgs): Promise<ExecTranCvsResult> {
       return this.post<ExecTranCvsArgs, ExecTranCvsResult>('/payment/ExecTranCvs.idPass', {
         ...args,
-        CustomerName: encoding.urlEncode(encoding.convert(args.CustomerName, 'SJIS')),
-        CustomerKana: encoding.urlEncode(encoding.convert(args.CustomerKana, 'SJIS')),
+        CustomerName: encoding.urlEncode(encoding.convert(args.CustomerName, 'SJIS') as any),
+        CustomerKana: encoding.urlEncode(encoding.convert(args.CustomerKana, 'SJIS') as any), // ここは使わないので雑にassertionするが、使うならちゃんと調べたほうが良い
       })
     }
 

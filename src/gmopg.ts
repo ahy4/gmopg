@@ -23,3 +23,5 @@ export * from './client/cardable.type'
 export * from './client/tranable.type'
 export * from './client/cvsTranable.type'
 export * from './client/multiTranable.type'
+
+export * from './errors'
